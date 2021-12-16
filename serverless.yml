@@ -1,0 +1,65 @@
+service: syncconnect-sdk-service
+frameworkVersion: '2'
+useDotenv: true
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  lambdaHashingVersion: 20201221
+  region: us-east-1
+  stage: prod
+  vpc:
+    securityGroupIds:
+      - sg-04e5dfe7ee46291e2
+    subnetIds:
+      - subnet-0610c3440d4ef0000
+      - subnet-0f84eddf0ac228106
+      - subnet-0d76000da2fe492e3
+      - subnet-0d6d1bd0b880548c8
+      - subnet-00434a825a38fafe9
+      - subnet-0627547e0505d5981
+
+plugins:
+  - serverless-offline
+  - serverless-dotenv-plugin
+  - serverless-domain-manager
+  - serverless-bundle
+
+custom:
+  customDomain:
+    domainName: api.syncconnectsdk.com
+    basePath: ''
+    stage: ${self:provider.stage}
+    createRoute53Record: true
+
+functions:
+  app:
+    handler: src/index.handler
+    environment:
+      NODE_ENV: production
+      PORT: 3000
+    events:
+      - http:
+          path: auth
+          method: any
+          cors: true
+      - http:
+          path: auth/{id}
+          method: any
+          cors: true
+      - http:
+          path: user
+          method: any
+          cors: true
+      - http:
+          path: user/{id}
+          method: any
+          cors: true
+      - http:
+          path: vehicle
+          method: any
+          cors: true
+      - http:
+          path: vehicle/{id}
+          method: any
+          cors: true
