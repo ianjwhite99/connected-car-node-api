@@ -11,8 +11,8 @@ export const status = async (
   vin: string,
   accessToken: string
 ): Promise<any> => {
-  const user = syncconnect.Vehicle(vin, accessToken)
-  return user
+  const vehicle = syncconnect.Vehicle(vin, accessToken)
+  return vehicle
     .status()
     .then((result) => result)
     .catch((err) => {
@@ -30,8 +30,8 @@ export const authStatus = async (
   vin: string,
   accessToken: string
 ): Promise<any> => {
-  const user = syncconnect.Vehicle(vin, accessToken)
-  return user
+  const vehicle = syncconnect.Vehicle(vin, accessToken)
+  return vehicle
     .authorizationStatus()
     .then((result) => result)
     .catch((err) => {
@@ -49,8 +49,8 @@ export const sendAuthorization = async (
   vin: string,
   accessToken: string
 ): Promise<any> => {
-  const user = syncconnect.Vehicle(vin, accessToken)
-  return user
+  const vehicle = syncconnect.Vehicle(vin, accessToken)
+  return vehicle
     .sendAuthorization()
     .then((result) => result)
     .catch((err) => {
@@ -68,8 +68,8 @@ export const details = async (
   vin: string,
   accessToken: string
 ): Promise<any> => {
-  const user = syncconnect.Vehicle(vin, accessToken)
-  return user
+  const vehicle = syncconnect.Vehicle(vin, accessToken)
+  return vehicle
     .details()
     .then((result) => result)
     .catch((err) => {
@@ -87,8 +87,8 @@ export const wakeup = async (
   vin: string,
   accessToken: string
 ): Promise<any> => {
-  const user = syncconnect.Vehicle(vin, accessToken)
-  return user
+  const vehicle = syncconnect.Vehicle(vin, accessToken)
+  return vehicle
     .wakeup()
     .then((result) => result)
     .catch((err) => {
@@ -103,8 +103,8 @@ export const wakeup = async (
  * @returns
  */
 export const start = async (vin: string, accessToken: string): Promise<any> => {
-  const user = syncconnect.Vehicle(vin, accessToken)
-  return user
+  const vehicle = syncconnect.Vehicle(vin, accessToken)
+  return vehicle
     .start()
     .then((result) => result)
     .catch((err) => {
@@ -119,8 +119,8 @@ export const start = async (vin: string, accessToken: string): Promise<any> => {
  * @returns
  */
 export const stop = async (vin: string, accessToken: string): Promise<any> => {
-  const user = syncconnect.Vehicle(vin, accessToken)
-  return user
+  const vehicle = syncconnect.Vehicle(vin, accessToken)
+  return vehicle
     .stop()
     .then((result) => result)
     .catch((err) => {
@@ -135,8 +135,8 @@ export const stop = async (vin: string, accessToken: string): Promise<any> => {
  * @returns
  */
 export const lock = async (vin: string, accessToken: string): Promise<any> => {
-  const user = syncconnect.Vehicle(vin, accessToken)
-  return user
+  const vehicle = syncconnect.Vehicle(vin, accessToken)
+  return vehicle
     .lock()
     .then((result) => result)
     .catch((err) => {
@@ -154,8 +154,8 @@ export const unlock = async (
   vin: string,
   accessToken: string
 ): Promise<any> => {
-  const user = syncconnect.Vehicle(vin, accessToken)
-  return user
+  const vehicle = syncconnect.Vehicle(vin, accessToken)
+  return vehicle
     .unlock()
     .then((result) => result)
     .catch((err) => {

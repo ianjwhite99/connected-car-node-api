@@ -15,41 +15,45 @@ import HttpException from '../common/http-exception'
 const vehicleRouter = express.Router()
 
 /**
- * @api {get} /vehicle/status/:vin Fetch Vehicle status
+ * @api {get} /vehicle/status Fetch Vehicle status
  */
 vehicleRouter.get(
-  '/status/:vin',
+  '/status',
   async (req: Request, res: Response, next: NextFunction) => {
     if (req.headers.authorization) {
       const accessToken = req.headers.authorization.split(' ')[1]
-      const { vin } = req.params
-      await status(vin, accessToken)
-        .then((result) => {
-          res.status(200).json(result)
-        })
-        .catch((err: HttpException) => {
-          next(err)
-        })
+      const { vin } = req.query
+      if (vin) {
+        await status(vin.toString(), accessToken)
+          .then((result) => {
+            res.status(200).json(result)
+          })
+          .catch((err: HttpException) => {
+            next(err)
+          })
+      } else next(new HttpException(400, 'Malformed Request: VIN required'))
     } else next(new HttpException(401, 'Missing access token'))
   }
 )
 
 /**
- * @api {get} /vehicle/authstatus/:vin Fetch Vehicle authorization status
+ * @api {get} /vehicle/authstatus Fetch Vehicle authorization status
  */
 vehicleRouter.get(
-  '/authstatus/:vin',
+  '/authstatus',
   async (req: Request, res: Response, next: NextFunction) => {
     if (req.headers.authorization) {
       const accessToken = req.headers.authorization.split(' ')[1]
-      const { vin } = req.params
-      await authStatus(vin, accessToken)
-        .then((result) => {
-          res.status(200).json(result)
-        })
-        .catch((err: HttpException) => {
-          next(err)
-        })
+      const { vin } = req.query
+      if (vin) {
+        await authStatus(vin.toString(), accessToken)
+          .then((result) => {
+            res.status(200).json(result)
+          })
+          .catch((err: HttpException) => {
+            next(err)
+          })
+      } else next(new HttpException(400, 'Malformed Request: VIN required'))
     } else next(new HttpException(401, 'Missing access token'))
   }
 )
@@ -75,21 +79,23 @@ vehicleRouter.post(
 )
 
 /**
- * @api {get} /vehicle/details/:vin Fetch Vehicle details
+ * @api {get} /vehicle/details Fetch Vehicle details
  */
 vehicleRouter.get(
-  '/details/:vin',
+  '/details',
   async (req: Request, res: Response, next: NextFunction) => {
     if (req.headers.authorization) {
       const accessToken = req.headers.authorization.split(' ')[1]
-      const { vin } = req.params
-      await details(vin, accessToken)
-        .then((result) => {
-          res.status(200).json(result)
-        })
-        .catch((err: HttpException) => {
-          next(err)
-        })
+      const { vin } = req.query
+      if (vin) {
+        await details(vin.toString(), accessToken)
+          .then((result) => {
+            res.status(200).json(result)
+          })
+          .catch((err: HttpException) => {
+            next(err)
+          })
+      } else next(new HttpException(400, 'Malformed Request: Missing VIN'))
     } else next(new HttpException(401, 'Missing access token'))
   }
 )
