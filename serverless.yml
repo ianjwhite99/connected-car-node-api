@@ -35,7 +35,7 @@ custom:
 functions:
   app:
     handler: src/index.handler
-    timeout: 60
+    timeout: 30
     environment:
       NODE_ENV: production
       PORT: 3000
