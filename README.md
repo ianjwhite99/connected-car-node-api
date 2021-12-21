@@ -1,4 +1,5 @@
-# sync-connect-node-api
-Express API built on top of the [syncconnect-node-sdk](https://github.com/ianjwhite99/sync-connect-node-sdk) with serverless.
+# connected-car-node-api
+Express API built on top of the [connected-car-node-sdk](https://github.com/ianjwhite99/connected-car-node-sdk) with serverless.
 
-This API acts as a middle-man between the [syncconnectsdk.com](https://syncconnectsdk.com) website and the FordPass API service.
+# Disclaimer
+THIS CODEBASE IS NOT ENDORSED, AFFILIATED, OR ASSOCIATED WITH FORD, FOMOCO OR THE FORD MOTOR COMPANY.
