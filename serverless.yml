@@ -1,4 +1,4 @@
-service: syncconnect-sdk-service
+service: connectedcar-sdk-service
 frameworkVersion: '2'
 useDotenv: true
 
@@ -27,7 +27,7 @@ plugins:
 
 custom:
   customDomain:
-    domainName: api.syncconnectsdk.com
+    domainName: api.connectedcar-sdk.com
     basePath: ''
     stage: ${self:provider.stage}
     createRoute53Record: true
