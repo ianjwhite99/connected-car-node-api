@@ -1,4 +1,4 @@
-import syncconnect from 'syncconnect'
+import connectedcar from 'connected-car'
 import HttpException from '../common/http-exception'
 
 /**
@@ -7,7 +7,7 @@ import HttpException from '../common/http-exception'
  * @returns
  */
 export const info = async (accessToken: string): Promise<any> => {
-  const user = syncconnect.User(accessToken)
+  const user = connectedcar.User(accessToken)
   return user
     .info()
     .then((result) => result)
@@ -22,7 +22,7 @@ export const info = async (accessToken: string): Promise<any> => {
  * @returns
  */
 export const getMessages = async (accessToken: string): Promise<any> => {
-  const user = syncconnect.User(accessToken)
+  const user = connectedcar.User(accessToken)
   return user
     .getMessages()
     .then((result) => result)
@@ -41,7 +41,7 @@ export const addVehicle = async (
   vin: string,
   accessToken: string
 ): Promise<any> => {
-  const user = syncconnect.User(accessToken)
+  const user = connectedcar.User(accessToken)
   return user
     .addVehicle(vin)
     .then((result) => result)
@@ -60,7 +60,7 @@ export const deleteVehicle = async (
   vin: string,
   accessToken: string
 ): Promise<any> => {
-  const user = syncconnect.User(accessToken)
+  const user = connectedcar.User(accessToken)
   return user
     .deleteVehicle(vin)
     .then((result) => result)
@@ -79,7 +79,7 @@ export const authorizeVehicle = async (
   messageId: string,
   accessToken: string
 ): Promise<any> => {
-  const user = syncconnect.User(accessToken)
+  const user = connectedcar.User(accessToken)
   return user
     .authorizeVehicle(messageId)
     .then((result) => result)
@@ -98,7 +98,7 @@ export const requestVehicleAccess = async (
   vin: string,
   accessToken: string
 ): Promise<any> => {
-  const user = syncconnect.User(accessToken)
+  const user = connectedcar.User(accessToken)
   return user
     .requestVehicleAccess(vin)
     .then((result) => result)
@@ -113,7 +113,7 @@ export const requestVehicleAccess = async (
  * @returns
  */
 export const listVehicles = async (accessToken: string): Promise<any> => {
-  const user = syncconnect.User(accessToken)
+  const user = connectedcar.User(accessToken)
   return user
     .vehicles()
     .then((result) => result)

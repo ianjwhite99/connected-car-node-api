@@ -1,7 +1,7 @@
-import syncconnect from 'syncconnect'
+import connectedcar from 'connected-car'
 import HttpException from '../common/http-exception'
 
-const scClient = syncconnect.AuthClient('9fb503e0-715b-47e8-adfd-ad4b7770f73b')
+const scClient = connectedcar.AuthClient('9fb503e0-715b-47e8-adfd-ad4b7770f73b')
 
 /**
  * Return user access token

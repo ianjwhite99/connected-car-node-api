@@ -1,4 +1,4 @@
-import syncconnect from 'syncconnect'
+import connectedcar from 'connected-car'
 import HttpException from '../common/http-exception'
 
 /**
@@ -11,7 +11,7 @@ export const status = async (
   vin: string,
   accessToken: string
 ): Promise<any> => {
-  const vehicle = syncconnect.Vehicle(vin, accessToken)
+  const vehicle = connectedcar.Vehicle(vin, accessToken)
   return vehicle
     .status()
     .then((result) => result)
@@ -30,7 +30,7 @@ export const authStatus = async (
   vin: string,
   accessToken: string
 ): Promise<any> => {
-  const vehicle = syncconnect.Vehicle(vin, accessToken)
+  const vehicle = connectedcar.Vehicle(vin, accessToken)
   return vehicle
     .authorizationStatus()
     .then((result) => result)
@@ -49,7 +49,7 @@ export const sendAuthorization = async (
   vin: string,
   accessToken: string
 ): Promise<any> => {
-  const vehicle = syncconnect.Vehicle(vin, accessToken)
+  const vehicle = connectedcar.Vehicle(vin, accessToken)
   return vehicle
     .sendAuthorization()
     .then((result) => result)
@@ -68,7 +68,7 @@ export const details = async (
   vin: string,
   accessToken: string
 ): Promise<any> => {
-  const vehicle = syncconnect.Vehicle(vin, accessToken)
+  const vehicle = connectedcar.Vehicle(vin, accessToken)
   return vehicle
     .details()
     .then((result) => result)
@@ -87,7 +87,7 @@ export const wakeup = async (
   vin: string,
   accessToken: string
 ): Promise<any> => {
-  const vehicle = syncconnect.Vehicle(vin, accessToken)
+  const vehicle = connectedcar.Vehicle(vin, accessToken)
   return vehicle
     .wakeup()
     .then((result) => result)
@@ -103,7 +103,7 @@ export const wakeup = async (
  * @returns
  */
 export const start = async (vin: string, accessToken: string): Promise<any> => {
-  const vehicle = syncconnect.Vehicle(vin, accessToken)
+  const vehicle = connectedcar.Vehicle(vin, accessToken)
   return vehicle
     .start()
     .then((result) => result)
@@ -119,7 +119,7 @@ export const start = async (vin: string, accessToken: string): Promise<any> => {
  * @returns
  */
 export const stop = async (vin: string, accessToken: string): Promise<any> => {
-  const vehicle = syncconnect.Vehicle(vin, accessToken)
+  const vehicle = connectedcar.Vehicle(vin, accessToken)
   return vehicle
     .stop()
     .then((result) => result)
@@ -135,7 +135,7 @@ export const stop = async (vin: string, accessToken: string): Promise<any> => {
  * @returns
  */
 export const lock = async (vin: string, accessToken: string): Promise<any> => {
-  const vehicle = syncconnect.Vehicle(vin, accessToken)
+  const vehicle = connectedcar.Vehicle(vin, accessToken)
   return vehicle
     .lock()
     .then((result) => result)
@@ -154,7 +154,7 @@ export const unlock = async (
   vin: string,
   accessToken: string
 ): Promise<any> => {
-  const vehicle = syncconnect.Vehicle(vin, accessToken)
+  const vehicle = connectedcar.Vehicle(vin, accessToken)
   return vehicle
     .unlock()
     .then((result) => result)
