@@ -26,7 +26,7 @@ docker build -t connected-car-docker-api .
 Running the docker image:
 
 ```bash
-docker run -p 8080:3000 -d connected-car-node-api
+docker run -p 8080:3000 -d connected-car-docker-api
 ```
 
 ## Disclaimer
