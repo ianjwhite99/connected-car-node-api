@@ -20,9 +20,8 @@
     "allowSyntheticDefaultImports": true,
     "strict": true,
     "strictFunctionTypes": false,
-    "noUnusedLocals": false, // temp
+    "noUnusedLocals": true,
     "suppressImplicitAnyIndexErrors": true
   },
-  "include": ["src"],
-  "exclude": ["node_modules", "dist"]
+  "include": ["src/**/*"]
 }

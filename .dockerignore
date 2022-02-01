@@ -1,0 +1,13 @@
+node_modules
+npm-debug.log
+.env.example
+.eslintcache
+.eslintignore
+.eslintrc
+.gitignore
+.prettierignore
+.prettierrc
+README.md
+serverless.yml
+.serverless
+dist
