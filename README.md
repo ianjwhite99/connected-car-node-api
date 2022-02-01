@@ -1,6 +1,6 @@
 # connected-car-node-api
 
-ExpressJS API built on top of the [connected-car-node-sdk](https://github.com/ianjwhite99/connected-car-node-sdk). This API is designed to be deployed using [serverless](https://serverless.com/) or [docker](https://www.docker.com/). The latest docker image is available on docker hub in the [connected-car-docker-api](https://hub.docker.com/r/ianjwhite99/connected-car-docker-api/) repository.
+ExpressJS API built on top of the [connected-car-node-sdk](https://github.com/ianjwhite99/connected-car-node-sdk). This API is designed to act as a middleman between the client and FordPass API. This application can be deployed using [serverless](https://serverless.com/) or [docker](https://www.docker.com/). The latest docker image is available on docker hub in the [connected-car-docker-api](https://hub.docker.com/r/ianjwhite99/connected-car-docker-api/) repository.
 
 ## Getting Started
 
