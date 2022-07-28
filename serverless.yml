@@ -34,7 +34,7 @@ custom:
 
 functions:
   app:
-    handler: src/index.handler
+    handler: src/index.default
     timeout: 30
     environment:
       NODE_ENV: production
