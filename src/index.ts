@@ -1,4 +1,4 @@
-import * as dotenv from 'dotenv'
+import dotenv from 'dotenv'
 import serverless from 'serverless-http'
 import app from './utils/app'
 
@@ -10,4 +10,6 @@ if (NODE_ENV === 'local' || !NODE_ENV) {
   app.listen(PORT || 3000, () => {
     console.log(`Listening at http://localhost:${PORT || 3000}`)
   })
-} else module.exports.handler = serverless(app)
+}
+
+export default serverless(app)
